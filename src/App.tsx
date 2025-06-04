@@ -1,15 +1,18 @@
+import { ThemeProvider } from "./components/theme-provider";
+import { Toaster } from "./components/ui/toaster";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Toaster } from "@/components/ui/toaster";
-import Login from "./pages/Login";
+import OfferLetterGenerator from "./pages/OfferLetterGenerator";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-      </Routes>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<OfferLetterGenerator />} />
+        </Routes>
+      </BrowserRouter>
       <Toaster />
-    </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
